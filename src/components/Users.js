@@ -13,7 +13,7 @@ const Users = ({ data, loading }) => {
           <p>
             Address:
             {' '}
-            { Object.entries(user.address).map(([key, value]) =>
+            { Object.entries(user.address).map(([key, value]) => // eslint-disable-next-line
                 <span key={value}>{ key == 'geo' ? '' : `${value}, ` }</span>
             )}
           </p>
