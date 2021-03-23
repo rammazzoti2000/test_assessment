@@ -91,6 +91,11 @@ To have this app on your pc, you need to:
 
 ## Automated Test
  > to be added
+ 
+ ## Live Demo & Deployment
+The project has been deployed on Netlify
+
+[Netlfy Live Demo Link](https://confident-euclid-a69370.netlify.app/) :point_left:
 
 <!-- CONTACT -->
 ## Contributors
@@ -114,6 +119,7 @@ Give a :star: if you like this project!
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [React Documentation](https://reactjs.org/docs/getting-started.html)
+* [Netlify](https://www.netlify.com/)
 
 
 ## 📝 License
