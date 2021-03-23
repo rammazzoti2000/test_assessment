@@ -56,6 +56,7 @@ This project was built using these technologies.
 * HTML/CSS
 * ReactJs
 * React Hooks
+* Custom Hooks
 
 <!-- INSTALLATION -->
 ## Usage
@@ -70,6 +71,8 @@ To have this app on your pc, you need to:
   ```
     https://github.com/rammazzoti2000/test_assessment.git
   ```
+  
+* Rename `.env.example` to `.env` - it contains the url variable for API request
 
 * In the project directory, you can run:
 
@@ -88,6 +91,11 @@ To have this app on your pc, you need to:
 
 ## Automated Test
  > to be added
+ 
+ ## Live Demo & Deployment
+The project has been deployed on Netlify
+
+[Netlfy Live Demo Link](https://confident-euclid-a69370.netlify.app/) :point_left:
 
 <!-- CONTACT -->
 ## Contributors
@@ -111,6 +119,7 @@ Give a :star: if you like this project!
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 * [React Documentation](https://reactjs.org/docs/getting-started.html)
+* [Netlify](https://www.netlify.com/)
 
 
 ## 📝 License
