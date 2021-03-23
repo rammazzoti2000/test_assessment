@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import Users from './Users';
+import React, { useState } from 'react';
+import Users from '../containers/Users';
 import Pagination from './Pagination';
-import axios from 'axios';
+import useFetch from '../hooks/useFetch';
 
 const Search = () => {
-  const [users, setUsers] = useState([]);
+  const [users, loading] = useFetch('users');
   const [filterText, setFilterText] = useState('');
-  const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(3);
-
-  useEffect(() => {
-    const fetchUsers = async () => {
-      setLoading(true);
-      const res = await axios.get(process.env.REACT_APP_API_BASE_URL);
-      setUsers(res.data);
-      setLoading(false);
-    };
-
-    fetchUsers();
-  }, []);
 
   const filteredItems = users.filter(
     user =>
@@ -46,10 +34,13 @@ const Search = () => {
         value={filterText}
         onChange={e => setFilterText(e.target.value.toLocaleLowerCase())}
       />
+
       <hr />
+
       {!filteredItems.length && (
-        <div>There are no items to display adjust your filter criteria</div>
+        <p>There are no items to display adjust your filter criteria</p>
       )}
+
       <Users data={currentUsers} loading={loading} />
       <Pagination
         usersPerPage={usersPerPage}
