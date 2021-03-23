@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import axios from 'axios';
 
 const useFetch = (url, init) => {
   const [users, setUsers] = useState([]);
@@ -14,17 +15,24 @@ const useFetch = (url, init) => {
     prevUrl.current = url;
     prevInit.current = init;
 
-    fetch(process.env.REACT_APP_API_BASE_URL + url, init)
-      .then(response => {
-        if (response.ok) return response.json();
-        setError(response);
-      })
-      .then(data => setUsers(data))
-      .catch(err => {
+    try {
+      const fetchUsers = async () => {
+        const headers = {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        };
+
+        setLoading(true);
+        const res = await axios.get(process.env.REACT_APP_API_BASE_URL + url, { headers });
+        setUsers(res.data);
+        setLoading(false);
+      };
+
+      fetchUsers();
+    } catch(err) {
         console.error(err);
         setError(err);
-      })
-      .finally(() => setLoading(false));
+    }
   }, [url, init]);
 
   return [users, loading, error];
