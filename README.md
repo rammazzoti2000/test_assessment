@@ -49,7 +49,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-The project is a simple React application to display a paginated table of users which can be filtered by typing in the search input. From a technical point of view, to build this project I made use of React Hooks and functional Components.
+The project is a simple React application to display a paginated table of users which can be filtered by typing the name or the email in the search input. From a technical point of view, to build this project I made use of React Hooks and functional Components.
 
 ### Built With
 This project was built using these technologies.
